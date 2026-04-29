@@ -1,0 +1,47 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#070711;color:#fff;font-family:Arial,Helvetica,sans-serif;touch-action:none}
+#game{display:block;width:100vw;height:100vh;background:#070711;cursor:crosshair}
+.menu{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.68);backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:18px}
+.hidden{display:none!important}
+.panel{width:min(94vw,560px);padding:30px;border-radius:30px;background:rgba(9,9,22,.96);border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 100px rgba(0,0,0,.65);text-align:center}
+.logo{width:76px;height:76px;margin:0 auto 12px;border-radius:24px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:42px;border:1px solid rgba(255,255,255,.12)}
+h1{margin:0;font-size:clamp(32px,7vw,52px);line-height:.95;letter-spacing:-2px}
+.panel p{color:rgba(255,255,255,.7);font-size:15px;line-height:1.55}
+input{width:100%;height:52px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.07);border-radius:17px;color:#fff;padding:0 16px;font-weight:800;font-size:16px;outline:none;text-align:center;text-transform:uppercase;margin:8px 0}
+input::placeholder{color:rgba(255,255,255,.4)}
+button{border:0;border-radius:17px;height:52px;padding:0 18px;background:linear-gradient(90deg,#db2777,#7c3aed);color:white;font-weight:1000;font-size:16px;cursor:pointer;box-shadow:0 14px 35px rgba(219,39,119,.25)}
+button:hover{filter:brightness(1.08)}
+button.ghost{background:rgba(255,255,255,.08);box-shadow:none;margin-top:10px}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.error{min-height:24px;color:#fb7185!important;font-weight:900;margin:4px 0!important}
+.tips{margin-top:10px;color:rgba(255,255,255,.52);font-size:13px;line-height:1.5}
+.hud{position:fixed;top:16px;left:16px;width:320px;z-index:10;background:rgba(8,8,19,.72);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:15px;backdrop-filter:blur(10px);box-shadow:0 25px 70px rgba(0,0,0,.45);user-select:none}
+.title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+.title h2{font-size:22px;margin:0;letter-spacing:-1px}
+.title span{font-size:12px;color:rgba(255,255,255,.62);font-weight:700}
+.smallBtn{height:36px;border-radius:12px;font-size:12px;padding:0 10px;box-shadow:none;background:rgba(255,255,255,.09)}
+.barLine{margin:10px 0}
+.barLine>div:first-child{display:flex;justify-content:space-between;font-size:13px;margin-bottom:5px;color:rgba(255,255,255,.84)}
+.barLine span{color:rgba(255,255,255,.66);font-weight:900}
+.bar{height:12px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;border:1px solid rgba(255,255,255,.08)}
+.bar>div{height:100%;width:50%;border-radius:999px;transition:width .08s linear}
+#hpFill{background:linear-gradient(90deg,#ef4444,#fb7185)}
+#loveFill{background:linear-gradient(90deg,#fb7185,#f9a8d4)}
+#xpFill{background:linear-gradient(90deg,#facc15,#fde68a)}
+.gridStats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.gridStats>div{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.06);border-radius:15px;padding:10px}
+.gridStats span{display:block;color:rgba(255,255,255,.5);font-size:11px;font-weight:900}
+.gridStats b{font-size:20px}
+.message{position:fixed;z-index:12;top:18px;left:50%;transform:translateX(-50%);max-width:min(90vw,680px);padding:12px 18px;border-radius:18px;background:rgba(0,0,0,.62);border:1px solid rgba(255,255,255,.12);font-weight:1000;text-align:center;opacity:0;transition:opacity .2s;pointer-events:none;backdrop-filter:blur(10px)}
+.message.show{opacity:1}
+.help{position:fixed;top:16px;right:16px;width:310px;padding:15px;border-radius:22px;background:rgba(8,8,19,.72);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);font-size:14px;line-height:1.55;color:rgba(255,255,255,.7)}
+#mobileControls{position:fixed;inset:auto 0 0 0;height:190px;z-index:20;pointer-events:none;display:none}
+#stickZone{position:absolute;left:28px;bottom:28px;width:132px;height:132px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);pointer-events:auto;touch-action:none}
+#stick{position:absolute;left:41px;top:41px;width:50px;height:50px;border-radius:999px;background:rgba(255,255,255,.75);box-shadow:0 0 25px rgba(255,255,255,.28)}
+#attackBtn{position:absolute;right:32px;bottom:44px;width:96px;height:96px;border-radius:999px;font-size:42px;pointer-events:auto;box-shadow:0 20px 45px rgba(219,39,119,.35)}
+@media(max-width:900px){
+  .hud{width:278px;transform:scale(.86);transform-origin:top left}
+  .help{display:none}
+  #mobileControls{display:block}
+  .message{top:118px}
+}

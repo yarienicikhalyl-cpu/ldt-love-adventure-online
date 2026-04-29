@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>LDT Love Adventure Online</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="menu" class="menu">
+    <div class="panel">
+      <div class="logo">👑</div>
+      <h1>LDT Love Adventure</h1>
+      <p>Mini-jeu aventure multijoueur PC + téléphone. Crée un salon, envoie le code à ton pote, puis jouez ensemble à distance.</p>
+
+      <input id="nameInput" maxlength="18" placeholder="Ton pseudo" />
+      <div class="split">
+        <button id="createBtn">Créer un salon</button>
+        <button id="joinBtn">Rejoindre</button>
+      </div>
+      <input id="codeInput" maxlength="5" placeholder="CODE DU SALON" />
+      <p id="errorText" class="error"></p>
+
+      <div class="tips">
+        PC : ZQSD / flèches + clic ou espace<br>
+        Téléphone : joystick + bouton attaque
+      </div>
+    </div>
+  </div>
+
+  <div id="endScreen" class="menu hidden">
+    <div class="panel">
+      <div class="logo" id="endIcon">💀</div>
+      <h1 id="endTitle">Défaite</h1>
+      <p id="endText">Le lien du couple a été brisé.</p>
+      <button id="restartBtn">Relancer la partie</button>
+      <button id="backBtn" class="ghost">Retour menu</button>
+    </div>
+  </div>
+
+  <div class="hud">
+    <div class="title">
+      <div>
+        <h2>👑 LDT Adventure</h2>
+        <span id="roomText">Pas connecté</span>
+      </div>
+      <button id="copyBtn" class="smallBtn">Copier code</button>
+    </div>
+
+    <div class="barLine">
+      <div><b>Vie</b><span id="hpTxt">100/100</span></div>
+      <div class="bar"><div id="hpFill"></div></div>
+    </div>
+
+    <div class="barLine">
+      <div><b>Amour</b><span id="loveTxt">100/100</span></div>
+      <div class="bar"><div id="loveFill"></div></div>
+    </div>
+
+    <div class="barLine">
+      <div><b>XP</b><span id="xpTxt">0/8</span></div>
+      <div class="bar"><div id="xpFill"></div></div>
+    </div>
+
+    <div class="gridStats">
+      <div><span>Niveau</span><b id="levelTxt">1</b></div>
+      <div><span>Cristaux</span><b id="crystalTxt">0/3</b></div>
+      <div><span>Joueurs</span><b id="playersTxt">0</b></div>
+      <div><span>Monstres</span><b id="monsterTxt">0</b></div>
+    </div>
+  </div>
+
+  <div id="messageBox" class="message"></div>
+
+  <div class="help">
+    <b>But :</b> récupérez les cristaux, tuez les monstres, puis entrez tous dans le portail violet.<br>
+    Tous les 5 niveaux, un boss apparaît.
+  </div>
+
+  <div id="mobileControls">
+    <div id="stickZone"><div id="stick"></div></div>
+    <button id="attackBtn">⚔</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
