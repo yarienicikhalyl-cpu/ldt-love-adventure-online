@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>LDT Love Adventure RPG</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="menu" class="menu">
+    <div class="panel">
+      <div class="logo">⚔️👑</div>
+      <h1>LDT Love Adventure RPG</h1>
+      <p>Action-RPG fantasy coop. Prince, princesse, épées, ennemis, boss, monde ouvert et niveaux de plus en plus durs.</p>
+      <input id="nameInput" maxlength="18" placeholder="Ton pseudo" />
+      <div class="row2">
+        <button id="createBtn">Créer un salon</button>
+        <button id="joinBtn">Rejoindre</button>
+      </div>
+      <input id="codeInput" maxlength="5" placeholder="CODE DU SALON" />
+      <p id="errorText" class="error"></p>
+      <div class="tips">PC : ZQSD / flèches + souris + clic<br>Téléphone : joystick + bouton épée</div>
+    </div>
+  </div>
+
+  <div id="endScreen" class="menu hidden">
+    <div class="panel">
+      <div id="endIcon" class="logo">💀</div>
+      <h1 id="endTitle">Défaite</h1>
+      <p id="endText">Le lien du couple s’est brisé.</p>
+      <button id="restartBtn">Relancer</button>
+      <button id="backBtn" class="ghost">Retour menu</button>
+    </div>
+  </div>
+
+  <div class="hud left">
+    <div class="hudTitle">
+      <div>
+        <h2>👑 LDT Adventure</h2>
+        <span id="roomText">Pas connecté</span>
+      </div>
+      <button id="copyBtn" class="smallBtn">Copier code</button>
+    </div>
+
+    <div class="barBlock">
+      <div class="barTop"><b>Vie</b><span id="hpTxt">0/0</span></div>
+      <div class="bar"><div id="hpFill"></div></div>
+    </div>
+    <div class="barBlock">
+      <div class="barTop"><b>Lien du couple</b><span id="bondTxt">0/100</span></div>
+      <div class="bar"><div id="bondFill"></div></div>
+    </div>
+    <div class="barBlock">
+      <div class="barTop"><b>XP</b><span id="xpTxt">0/0</span></div>
+      <div class="bar"><div id="xpFill"></div></div>
+    </div>
+
+    <div class="stats">
+      <div><span>Niveau</span><b id="levelTxt">1</b></div>
+      <div><span>Cristaux</span><b id="crystalTxt">0/0</b></div>
+      <div><span>Joueurs</span><b id="playersTxt">0</b></div>
+      <div><span>Ennemis</span><b id="monsterTxt">0</b></div>
+    </div>
+  </div>
+
+  <div class="hud right helpBox">
+    <h3>Comment jouer</h3>
+    <p>Récupère les cristaux, tue les ennemis, puis entrez tous dans le portail violet.</p>
+    <p>Le prince et la princesse doivent rester proches pour garder le lien du couple.</p>
+    <p>Tous les 5 niveaux, un boss apparaît.</p>
+  </div>
+
+  <div id="messageBox" class="message"></div>
+
+  <div id="mobileControls">
+    <div id="stickZone"><div id="stick"></div></div>
+    <button id="attackBtn">⚔</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/client.js"></script>
+</body>
+</html>
